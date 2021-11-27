@@ -539,6 +539,9 @@ input[type=color]:hover::before, input[type=color]:active::before {
   bottom: -4px;
   border-bottom-left-radius: 0px;
 }
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item[changed] .dribbblish-config-item-reset {
+  display: block !important;
+}
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item .dribbblish-config-item-header {
   display: flex;
   flex-direction: column;
@@ -550,7 +553,7 @@ input[type=color]:hover::before, input[type=color]:active::before {
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item .dribbblish-config-item-header > .x-settings-title {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
   grid-area: header;
   margin: 0px;
@@ -559,10 +562,11 @@ input[type=color]:hover::before, input[type=color]:active::before {
   bottom: 0px;
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item .dribbblish-config-item-header > .x-settings-title .dribbblish-config-item-reset {
+  display: none;
+  width: 20px;
+  height: 20px;
   padding: 0px;
   color: var(--spice-text);
-  width: 1em;
-  height: 1em;
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item .dribbblish-config-item-header > .main-type-mesto {
   grid-area: description;
