@@ -753,7 +753,6 @@ input[type=color]:hover::before, input[type=color]:active::before {
 .GenericModal__overlay .GenericModal {
   z-index: 1;
   position: relative;
-  width: clamp(500px, 50%, 650px);
   background-color: rgba(var(--spice-rgb-main), 0.95);
   backdrop-filter: blur(3px);
   padding: 24px 16px;
@@ -763,6 +762,15 @@ input[type=color]:hover::before, input[type=color]:active::before {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+}
+generic-modal .GenericModal__overlay .GenericModal {
+  color: var(--spice-text);
+  width: clamp(500px, 50%, 650px);
+}
+.ReactModalPortal > .GenericModal__overlay .GenericModal > * {
+  color: var(--spice-subtext);
+  background-color: transparent;
+  padding: 0px;
 }
 .GenericModal__overlay .GenericModal .main-trackCreditsModal-container {
   display: flex;
@@ -793,6 +801,45 @@ input[type=color]:hover::before, input[type=color]:active::before {
   padding: 0px 26px;
 }
 
+.connect-device-list-container {
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+  border-radius: var(--main-corner-radius);
+  padding: 8px;
+  background-color: rgba(var(--spice-rgb-main), calc(0.75 + -0.1 * var(--is_light))) !important;
+  backdrop-filter: blur(10px);
+  border-radius: var(--main-corner-radius);
+  box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+}
+.connect-device-list-container::before {
+  display: none;
+}
+.connect-device-list-container .connect-device-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.connect-device-list-container .connect-device-list-content .connect-header {
+  padding: 0px;
+  filter: invert( var(--is_light) );
+}
+.connect-device-list-container .connect-device-list-content .connect-device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+.connect-device-list-container .connect-device-list-content .connect-device-list .connect-device-list-item {
+  background-color: transparent;
+  border-radius: var(--main-corner-radius);
+}
+.connect-device-list-container .connect-device-list-content .connect-device-list .connect-device-list-item:hover, .connect-device-list-container .connect-device-list-content .connect-device-list .connect-device-list-item:active {
+  background-color: rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+}
+.connect-device-list-container .connect-device-list-content .connect-device-list .connect-device-list-item--active {
+  background-color: rgba(var(--spice-rgb-selected-row), 0.2) !important;
+}
+
 :root {
   --bar-height: 70px;
   --bar-cover-art-size: 40px;
@@ -805,6 +852,18 @@ input[type=color]:hover::before, input[type=color]:active::before {
   --sidebar-icons-border-radius: 50vh;
   --song-transition-speed: 3s;
   --is_dark: calc(1 - var(--is_light));
+}
+:root:not([dribbblish-js-installed])::after {
+  content: "dribbblish-dynamic.js not installed correctly";
+  position: fixed;
+  inset: 0px;
+  color: red;
+  background-color: black;
+  text-align: center;
+  line-height: 100vh;
+  font-family: var(--glue-font-family);
+  font-size: 32px;
+  font-weight: 700;
 }
 
 ::-webkit-scrollbar {
@@ -880,15 +939,6 @@ input[type=color]:hover::before, input[type=color]:active::before {
   color: white;
 }
 
-.connect-title,
-.connect-header {
-  display: none;
-}
-
-.connect-device-list {
-  margin: 0px -5px;
-}
-
 /* Remove Topbar background colour */
 .main-topBar-background {
   background-color: unset !important;
@@ -898,8 +948,7 @@ input[type=color]:hover::before, input[type=color]:active::before {
   background-color: var(--spice-main);
 }
 
-.main-entityHeader-shadow,
-.connect-device-list-container {
+.main-entityHeader-shadow {
   box-shadow: 0 4px 20px #21212130;
 }
 
@@ -1086,6 +1135,7 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 }
 
 .main-nowPlayingBar-container {
+  position: relative;
   border-radius: 0 0 var(--main-corner-radius) var(--main-corner-radius);
   background-color: var(--spice-main);
   border-top: 0;
@@ -1100,11 +1150,7 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 }
 
 .main-connectBar-connectBar {
-  border-radius: 0 0 var(--main-corner-radius) var(--main-corner-radius);
-  border: 2px solid var(--spice-main);
-  border-top: 0;
-  background-color: var(--spice-button) !important;
-  color: var(--spice-text) !important;
+  display: none;
 }
 
 .Root__nav-bar {
@@ -1289,13 +1335,9 @@ html.sidebar-hide-text .GlueDropTarget span {
 
 .playback-bar {
   position: absolute;
-  width: var(--main-view-width);
-  left: var(--sidebar-width);
-  bottom: calc(var(--main-gap) + var(--bar-height) - 6px);
-}
-
-.Root.is-connectBarVisible .playback-bar {
-  bottom: calc(var(--main-gap) + var(--bar-height) + 24px - 6px);
+  left: 0px;
+  right: 0px;
+  top: -6px;
 }
 
 .main-nowPlayingWidget-coverArt .cover-art {
@@ -1331,6 +1373,9 @@ html.sidebar-hide-text .GlueDropTarget span {
 #main[playbar-transition] .progress-bar:not(:active) .progress-bar__slider {
   transition-property: left, opacity;
 }
+#main[playbar-transition] .playback-bar:not(:active) .prog-tooltip {
+  transition: transform var(--playbar-movement-anim-speed) ease;
+}
 
 .playback-bar .prog-tooltip {
   position: absolute;
@@ -1339,15 +1384,15 @@ html.sidebar-hide-text .GlueDropTarget span {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 5px;
-  border-radius: 4px;
   text-align: center;
-  color: var(--spice-text);
-  background-color: var(--spice-button);
   pointer-events: none;
-}
-
-.playback-bar:not(:active) .prog-tooltip {
-  transition: transform var(--playbar-movement-anim-speed) ease;
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+  border-radius: var(--main-corner-radius);
+  color: var(--spice-subtext);
+  background-color: rgba(var(--spice-rgb-main), calc(0.75 + -0.1 * var(--is_light))) !important;
+  backdrop-filter: blur(10px);
+  border-radius: var(--main-corner-radius);
+  box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
 
 .minimal-player .player-controls__buttons {
@@ -1839,10 +1884,6 @@ div.GlueDropTarget.personal-library > *.active {
   left: calc(var(--sidebar-width) + 10px);
 }
 
-.Root.is-connectBarVisible .main-coverSlotExpanded-container {
-  bottom: calc(var(--main-gap) + var(--bar-height) + 24px + 10px);
-}
-
 html.right-expanded-cover .main-coverSlotExpanded-container {
   right: calc(var(--main-gap) * 2);
   left: unset;
@@ -1901,11 +1942,6 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
   border-radius: 5px;
 }
 
-.connect-device-list-item:focus,
-.connect-device-list-item:hover {
-  background-color: rgba(var(--spice-rgb-selected-row), 0.3);
-}
-
 /* 1.1.56 */
 .main-navBar-navBar {
   width: var(--sidebar-width) !important;
@@ -1952,11 +1988,6 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
 /* explicit icon */
 .main-tag-container {
   background-color: var(--spice-text);
-}
-
-/* progressbar tooltip text color */
-.playback-bar .prog-tooltip {
-  color: var(--spice-sidebar-text) !important;
 }
 
 /* edit button of CustomApps */
@@ -2025,6 +2056,10 @@ html:not(.buddyfeed-visible) .Root__top-container::before {
 
 .main-noConnection {
   display: none;
+}
+
+svg[type=dribbblish-icon] {
+  overflow: visible;
 }
 
 canvas[width="250"][height="250"] {
