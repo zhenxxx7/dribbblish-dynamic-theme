@@ -369,17 +369,10 @@ input[type=time]::-webkit-calendar-picker-indicator {
 }
 input[type=color] {
   position: relative;
-  padding: 0px;
-}
-input[type=color]::before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: 4px;
+  padding: 1px 3px;
   background-color: rgba(var(--spice-rgb-selected-row), 0.4);
 }
-input[type=color]:hover::before, input[type=color]:active::before {
+input[type=color]:hover, input[type=color]:active {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6);
 }
 
