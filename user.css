@@ -431,18 +431,18 @@ input[type=color]:hover, input[type=color]:active {
   align-items: center;
   gap: 8px;
 }
-#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed] {
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed]:not([search]) {
   overflow: hidden;
   min-height: 38px;
   height: 38px;
 }
-#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed] .dribbblish-config-area-header svg {
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed]:not([search]) .dribbblish-config-area-header svg {
   transform: rotate(0deg);
 }
-#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed] .dribbblish-config-area-header:hover svg {
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed]:not([search]) .dribbblish-config-area-header:hover svg {
   transform: rotate(0deg) scale(1.1);
 }
-#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed] .dribbblish-config-area-header:active svg {
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area[collapsed]:not([search]) .dribbblish-config-area-header:active svg {
   transform: rotate(0deg) scale(0.9);
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area:empty {
@@ -488,7 +488,7 @@ input[type=color]:hover, input[type=color]:active {
   padding: 8px 16px;
   user-select: text;
 }
-#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item[hidden] {
+#dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item[hidden], #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item[hidden-override] {
   display: none;
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-areas .dribbblish-config-area .dribbblish-config-area-items .dribbblish-config-item::before {
