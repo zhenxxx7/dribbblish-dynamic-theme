@@ -2029,6 +2029,10 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
   color: var(--spice-sidebar-text) !important;
 }
 
+.main-shelf-title {
+  font-family: var(--glue-font-family);
+}
+
 /* translucent background cover */
 .Root__top-container::before {
   z-index: 3;
