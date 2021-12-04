@@ -267,13 +267,13 @@ button.main-button-tertiary span {
 .x-toggle-indicatorWrapper {
   background-color: rgba(var(--spice-rgb-subtext), 0.1);
 }
-input:hover ~ .x-toggle-indicatorWrapper {
+input:not(:disabled):hover ~ .x-toggle-indicatorWrapper {
   background-color: rgba(var(--spice-rgb-subtext), 0.15) !important;
 }
 input:checked ~ .x-toggle-indicatorWrapper {
   background-color: rgba(var(--spice-rgb-selected-row), 0.4) !important;
 }
-input:hover:checked ~ .x-toggle-indicatorWrapper {
+input:not(:disabled):hover:checked ~ .x-toggle-indicatorWrapper {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
 }
 
@@ -286,12 +286,18 @@ input {
   outline: none;
   border: none;
 }
-textarea:hover, textarea:active,
-select:hover,
-select:active,
-input:hover,
-input:active {
+textarea:not(:disabled):hover, textarea:not(:disabled):active,
+select:not(:disabled):hover,
+select:not(:disabled):active,
+input:not(:disabled):hover,
+input:not(:disabled):active {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
+}
+textarea:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5 !important;
 }
 textarea::placeholder,
 select::placeholder,
@@ -304,19 +310,15 @@ textarea {
   padding: 6px 10px;
 }
 
-select {
-  background-color: rgba(var(--spice-rgb-selected-row), 0.4) !important;
-  color: var(--spice-subtext);
-}
-select:hover, select:active {
-  background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
-}
-select option {
+select > option {
   background: var(--spice-main) !important;
 }
 
 input {
   padding: 6px 10px 6px 48px;
+}
+input[type=checkbox] {
+  opacity: 0 !important;
 }
 input[type=range] {
   -webkit-appearance: none;
@@ -370,10 +372,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
 input[type=color] {
   position: relative;
   padding: 1px 3px;
-  background-color: rgba(var(--spice-rgb-selected-row), 0.4);
-}
-input[type=color]:hover, input[type=color]:active {
-  background-color: rgba(var(--spice-rgb-selected-row), 0.6);
 }
 
 #dribbblish-config {
@@ -404,11 +402,15 @@ input[type=color]:hover, input[type=color]:active {
   padding: 20px 15px;
   border-radius: var(--main-corner-radius);
   display: flex;
-  gap: 5px;
+  gap: 8px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+}
+#dribbblish-config .dribbblish-config-container > h2 {
+  font-size: 32px;
+  line-height: 32px;
 }
 #dribbblish-config .dribbblish-config-container .dribbblish-config-close {
   position: absolute;
