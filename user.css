@@ -41,12 +41,12 @@
 }
 @property --spice-sidebar {
   syntax: "<color>";
-  initial-value: #1ed760;
+  initial-value: #121212;
   inherits: true;
 }
 @property --spice-rgb-sidebar {
   syntax: "<number>, <number>, <number>";
-  initial-value: 30, 215, 96;
+  initial-value: 18, 18, 18;
   inherits: true;
 }
 @property --spice-player {
@@ -688,32 +688,34 @@ input[type=color] {
   pointer-events: none;
   opacity: 0;
   transition: opacity 1s ease-in;
+  color: var(--spice-subtext);
+  font-family: var(--glue-font-family);
+  font-size: 32px;
+  font-weight: 700;
 }
 #dribbblish-loader[active] {
   opacity: 1;
   pointer-events: all;
 }
 #dribbblish-loader::before {
+  z-index: -1;
   content: "";
   position: absolute;
   inset: 0px;
   background-color: rgba(var(--spice-rgb-main), calc(0.9 + -0.1 * var(--is_light)));
   backdrop-filter: blur(10px);
 }
-#dribbblish-loader::after {
-  content: attr(text);
-  position: absolute;
-  bottom: 40%;
-  color: var(--spice-subtext);
-  font-family: var(--glue-font-family);
-  font-size: 32px;
-  font-weight: 700;
+#dribbblish-loader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
 }
-#dribbblish-loader svg {
+#dribbblish-loader > div svg {
   animation: rotator 1.4s linear infinite;
 }
-#dribbblish-loader svg circle {
-  stroke: var(--spice-sidebar);
+#dribbblish-loader > div svg circle {
+  stroke: var(--spice-text);
   stroke-dasharray: 187;
   stroke-dashoffset: 0;
   transform-origin: center;
