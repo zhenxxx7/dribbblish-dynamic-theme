@@ -253,14 +253,14 @@ button.main-button-primary:hover, button.main-button-primary:active {
 button.main-button-primary span {
   color: var(--spice-subtext) !important;
 }
-button.main-button-tertiary {
+button.main-button-tertiary:not(.main-entityHeader-titleButton) {
   color: var(--spice-subtext);
   background-color: rgba(var(--spice-rgb-selected-row), calc(0.2 + 0.05 * var(--is_light))) !important;
 }
-button.main-button-tertiary:hover, button.main-button-tertiary:active {
+button.main-button-tertiary:not(.main-entityHeader-titleButton):hover, button.main-button-tertiary:not(.main-entityHeader-titleButton):active {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
 }
-button.main-button-tertiary span {
+button.main-button-tertiary:not(.main-entityHeader-titleButton) span {
   color: var(--spice-subtext) !important;
 }
 
