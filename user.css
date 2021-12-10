@@ -837,6 +837,10 @@ generic-modal .GenericModal__overlay .GenericModal {
   background-color: rgba(var(--spice-rgb-selected-row), 0.2) !important;
 }
 
+svg[icon-type=dribbblish] {
+  overflow: visible;
+}
+
 :root {
   --bar-height: 70px;
   --bar-cover-art-size: 40px;
@@ -1391,6 +1395,7 @@ html.sidebar-hide-text .GlueDropTarget span {
   transform: translateX(-50%);
   padding: 0 5px;
   text-align: center;
+  white-space: nowrap;
   pointer-events: none;
   border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
@@ -2066,10 +2071,6 @@ html:not(.buddyfeed-visible) .Root__top-container::before {
 
 .main-noConnection {
   display: none;
-}
-
-svg[type=dribbblish-icon] {
-  overflow: visible;
 }
 
 canvas[width="250"][height="250"] {
