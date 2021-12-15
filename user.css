@@ -769,32 +769,33 @@ generic-modal .GenericModal__overlay .GenericModal {
   background-color: transparent;
   padding: 0px;
 }
-.GenericModal__overlay .GenericModal .main-trackCreditsModal-container {
+.GenericModal__overlay .GenericModal .main-trackCreditsModal-container, .GenericModal__overlay .GenericModal .main-embedWidgetGenerator-container {
   display: flex;
   gap: 16px;
   background-color: transparent;
   width: 100%;
+  box-shadow: none;
 }
-.GenericModal__overlay .GenericModal .main-trackCreditsModal-container .main-trackCreditsModal-header {
+.GenericModal__overlay .GenericModal .main-trackCreditsModal-header, .GenericModal__overlay .GenericModal .main-embedWidgetGenerator-header {
   display: flex;
   gap: 16px;
   padding: 0px;
   width: 100%;
   border: none;
 }
-.GenericModal__overlay .GenericModal .main-trackCreditsModal-container .main-trackCreditsModal-header h1 {
+.GenericModal__overlay .GenericModal .main-trackCreditsModal-header h1, .GenericModal__overlay .GenericModal .main-embedWidgetGenerator-header h1 {
   text-align: center;
   width: 100%;
   font-family: var(--glue-font-family);
   font-size: 2em;
   font-weight: 700;
 }
-.GenericModal__overlay .GenericModal .main-trackCreditsModal-container .main-trackCreditsModal-header button {
+.GenericModal__overlay .GenericModal .main-trackCreditsModal-header button, .GenericModal__overlay .GenericModal .main-embedWidgetGenerator-header button {
   position: absolute;
   top: 16px;
   right: 16px;
 }
-.GenericModal__overlay .GenericModal .main-trackCreditsModal-container .main-trackCreditsModal-mainSection {
+.GenericModal__overlay .GenericModal .main-trackCreditsModal-mainSection, .GenericModal__overlay .GenericModal .main-embedWidgetGenerator-mainSection {
   padding: 0px 26px;
 }
 
