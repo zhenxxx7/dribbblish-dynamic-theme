@@ -614,18 +614,20 @@ input[type=color] {
   border-color: rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
 
-#main[hide-ads=true] {
-  /* Remove upgrade button*/
-  /* Remove upgrade to premium button in user menu */
-  /* Remove ad placeholder in main screen */
-}
-#main[hide-ads=true] .main-topBar-UpgradeButton {
+#main[hide-ads~=ads] .main-leaderboardComponent-container {
   display: none;
 }
-#main[hide-ads=true] .main-contextMenu-menuItemButton[href="https://www.spotify.com/premium/"] {
+
+#main[hide-ads~=premium] .main-topBar-UpgradeButton {
   display: none;
 }
-#main[hide-ads=true] .main-leaderboardComponent-container {
+#main[hide-ads~=premium] .main-contextMenu-menuItemButton[href="https://www.spotify.com/premium/"] {
+  display: none;
+}
+#main[hide-ads~=premium] .volume-bar + .control-button {
+  display: none;
+}
+#main[hide-ads~=premium] .main-playButton-PlayButton.main-playButton-primary + button[role=switch] {
   display: none;
 }
 
