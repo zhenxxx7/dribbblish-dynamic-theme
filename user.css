@@ -844,6 +844,36 @@ svg[icon-type=dribbblish] {
   overflow: visible;
 }
 
+.main-topBar-topbarContent {
+  height: 100%;
+}
+.main-topBar-topbarContent > nav[class*=-tabBar][class*=-tabBar-nav] {
+  height: 100%;
+}
+.main-topBar-topbarContent > nav[class*=-tabBar][class*=-tabBar-nav] > ul {
+  display: flex;
+  gap: 8px;
+  height: 100%;
+}
+.main-topBar-topbarContent > nav[class*=-tabBar][class*=-tabBar-nav] > ul li[class*=-tabBar-headerItem] {
+  height: 100%;
+}
+.main-topBar-topbarContent > nav[class*=-tabBar][class*=-tabBar-nav] > ul li[class*=-tabBar-headerItem] > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  height: 100%;
+  padding: 0px 8px;
+  border-radius: var(--sidebar-icons-border-radius);
+}
+.main-topBar-topbarContent > nav[class*=-tabBar][class*=-tabBar-nav] > ul li[class*=-tabBar-headerItem] > a > span {
+  line-height: 13px;
+  font-family: var(--glue-font-family);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 :root {
   --bar-height: 70px;
   --bar-cover-art-size: 40px;
@@ -1601,6 +1631,9 @@ li.GlueDropTarget {
   max-width: unset;
   padding: 16px 32px !important;
 }
+.main-topBar-container > * {
+  height: 100%;
+}
 
 /** Custom elements */
 .dribs-playlist-list {
@@ -2063,13 +2096,12 @@ html:not(.buddyfeed-visible) .Root__top-container::before {
   inset: var(--main-gap) 0px var(--main-gap) var(--sidebar-width);
 }
 
-.lyrics-lyricsContainer-LyricsContainer {
-  height: 100% !important;
-}
-
 .main-view-container__scroll-node-child {
   height: 100%;
   padding-bottom: 0px;
+}
+.main-view-container__scroll-node-child > * {
+  height: 100% !important;
 }
 
 .main-noConnection {
