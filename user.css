@@ -586,6 +586,8 @@ input[type=color] {
 }
 
 .main-contextMenu-menu {
+  position: relative;
+  overflow: visible;
   background-color: transparent !important;
   border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
