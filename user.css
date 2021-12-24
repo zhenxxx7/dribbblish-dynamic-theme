@@ -397,15 +397,16 @@ input[type=color] {
   z-index: 1;
   position: relative;
   width: clamp(500px, 50%, 650px);
-  background-color: rgba(var(--spice-rgb-main), 0.95);
-  backdrop-filter: blur(3px);
   padding: 20px 15px;
-  border-radius: var(--main-corner-radius);
   display: flex;
   gap: 8px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(var(--spice-rgb-main), 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+  border-radius: var(--main-corner-radius);
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
 #dribbblish-config .dribbblish-config-container > h2 {
@@ -589,7 +590,6 @@ input[type=color] {
   position: relative;
   overflow: visible;
   background-color: transparent !important;
-  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
   padding: 8px;
 }
@@ -598,8 +598,9 @@ input[type=color] {
   content: "";
   position: absolute;
   inset: 0px;
-  background-color: rgba(var(--spice-rgb-main), calc(0.75 + -0.1 * var(--is_light))) !important;
+  background-color: rgba(var(--spice-rgb-main), calc(0.8 + -0.1 * var(--is_light)));
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
@@ -682,43 +683,6 @@ input[type=color] {
   aspect-ratio: 1/1;
 }
 
-#dribbblish-loader {
-  z-index: 999999;
-  position: fixed;
-  inset: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1s ease-in;
-  color: var(--spice-subtext);
-  font-family: var(--glue-font-family);
-  font-size: 32px;
-  font-weight: 700;
-}
-#dribbblish-loader[active] {
-  opacity: 1;
-  pointer-events: all;
-}
-#dribbblish-loader::before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  inset: 0px;
-  background-color: rgba(var(--spice-rgb-main), calc(0.9 + -0.1 * var(--is_light)));
-  backdrop-filter: blur(10px);
-}
-#dribbblish-loader > div {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-}
-#dribbblish-loader > div svg {
-  color: var(--spice-text);
-}
-
 .GenericModal__overlay {
   backdrop-filter: blur(3px) brightness(60%);
   background-color: transparent;
@@ -726,14 +690,15 @@ input[type=color] {
 .GenericModal__overlay .GenericModal {
   z-index: 1;
   position: relative;
-  background-color: rgba(var(--spice-rgb-main), 0.95);
-  backdrop-filter: blur(3px);
   padding: 24px 16px;
-  border-radius: var(--main-corner-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(var(--spice-rgb-main), 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+  border-radius: var(--main-corner-radius);
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
 generic-modal .GenericModal__overlay .GenericModal {
@@ -776,11 +741,10 @@ generic-modal .GenericModal__overlay .GenericModal {
 }
 
 .connect-device-list-container {
-  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
-  border-radius: var(--main-corner-radius);
   padding: 8px;
-  background-color: rgba(var(--spice-rgb-main), calc(0.75 + -0.1 * var(--is_light))) !important;
+  background-color: rgba(var(--spice-rgb-main), calc(0.8 + -0.1 * var(--is_light)));
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
@@ -816,6 +780,46 @@ generic-modal .GenericModal__overlay .GenericModal {
 
 svg[icon-type=dribbblish] {
   overflow: visible;
+}
+
+#dribbblish-overlay {
+  z-index: 999999;
+  position: fixed;
+  inset: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  color: var(--spice-subtext);
+  font-family: var(--glue-font-family);
+  font-size: 32px;
+  font-weight: 700;
+}
+#dribbblish-overlay[active] {
+  opacity: 1;
+  pointer-events: all;
+}
+#dribbblish-overlay::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background-color: rgba(var(--spice-rgb-main), calc(0.9 + -0.1 * var(--is_light)));
+  backdrop-filter: blur(10px);
+}
+#dribbblish-overlay > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+#dribbblish-overlay > div > * {
+  color: var(--color);
+}
+#dribbblish-overlay > div > *:empty {
+  display: none;
 }
 
 .main-topBar-topbarContent {
@@ -1404,11 +1408,10 @@ html.sidebar-hide-text .GlueDropTarget span {
   text-align: center;
   white-space: nowrap;
   pointer-events: none;
-  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
-  border-radius: var(--main-corner-radius);
   color: var(--spice-subtext);
-  background-color: rgba(var(--spice-rgb-main), calc(0.75 + -0.1 * var(--is_light))) !important;
+  background-color: rgba(var(--spice-rgb-main), 0.95);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
   border-radius: var(--main-corner-radius);
   box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
@@ -2080,6 +2083,15 @@ html:not(.buddyfeed-visible) .Root__top-container::before {
 
 .main-noConnection {
   display: none;
+}
+
+.main-notificationBubbleContainer-NotificationBubbleContainer .main-notificationBubble-NotificationBubble {
+  color: var(--spice-subtext);
+  background-color: rgba(var(--spice-rgb-main), 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
+  border-radius: var(--main-corner-radius);
+  box-shadow: 0px 0px 8px rgba(var(--spice-rgb-subtext), calc(0.1 + 0.1 * var(--is_light)));
 }
 
 canvas[width="250"][height="250"] {
