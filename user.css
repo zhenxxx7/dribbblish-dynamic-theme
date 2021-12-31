@@ -978,6 +978,10 @@ svg[icon-type=dribbblish] {
   filter: grayscale(1);
 }
 
+.main-trackList-trackListRowGrid {
+  background-color: var(--spice-main);
+}
+
 .main-trackList-trackListRow:hover {
   background-color: rgba(var(--spice-rgb-selected-row), 0.2) !important;
 }
