@@ -1472,9 +1472,6 @@ html.sidebar-hide-text .GlueDropTarget span {
   color: var(--spice-text);
 }
 
-#main-trackInfo-year {
-  display: block;
-}
 #main[playbar-album-info=false] #main-trackInfo-year {
   display: none;
 }
