@@ -1482,6 +1482,10 @@ html.sidebar-hide-text .GlueDropTarget span {
   display: none;
 }
 
+#main[playbar-genre-info=false] #main-trackInfo-genre {
+  display: none;
+}
+
 .main-topBar-topbarContent .main-playButton-PlayButton {
   --size: 35px !important;
 }
