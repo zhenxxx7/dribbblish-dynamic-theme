@@ -630,7 +630,7 @@ input[type=color] {
 #main[hide-ads~=premium] .volume-bar + .control-button {
   display: none;
 }
-#main[hide-ads~=premium] .main-playButton-PlayButton.main-playButton-primary + button[role=switch] {
+#main[hide-ads~=premium] .main-actionBar-ActionBarRow button[role=switch] {
   display: none;
 }
 
@@ -2118,4 +2118,17 @@ canvas[width="250"][height="250"] {
 #main:not([player-controls=spotify]) .main-trackInfo-container > div > div > div {
   display: flex;
   justify-content: center;
+}
+
+.main-trackInfo-release {
+  font-size: 10px;
+}
+
+.encore-bright-accent-set {
+  --background-highlight: var(--spice-button) !important;
+  --background-press: var(--spice-button-active) !important;
+}
+
+.control-button--active::after {
+  display: none;
 }
