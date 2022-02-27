@@ -243,24 +243,24 @@
   letter-spacing: normal;
 }
 
-button.main-button-primary {
+.main-button-primary {
   color: var(--spice-subtext);
   background-color: rgba(var(--spice-rgb-selected-row), 0.4) !important;
 }
-button.main-button-primary:hover, button.main-button-primary:active {
+.main-button-primary:hover, .main-button-primary:active {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
 }
-button.main-button-primary span {
+.main-button-primary span {
   color: var(--spice-subtext) !important;
 }
-button.main-button-tertiary:not(.main-entityHeader-titleButton) {
+.main-button-tertiary:not(.main-entityHeader-titleButton) {
   color: var(--spice-subtext);
   background-color: rgba(var(--spice-rgb-selected-row), calc(0.2 + 0.05 * var(--is_light))) !important;
 }
-button.main-button-tertiary:not(.main-entityHeader-titleButton):hover, button.main-button-tertiary:not(.main-entityHeader-titleButton):active {
+.main-button-tertiary:not(.main-entityHeader-titleButton):hover, .main-button-tertiary:not(.main-entityHeader-titleButton):active {
   background-color: rgba(var(--spice-rgb-selected-row), 0.6) !important;
 }
-button.main-button-tertiary:not(.main-entityHeader-titleButton) span {
+.main-button-tertiary:not(.main-entityHeader-titleButton) span {
   color: var(--spice-subtext) !important;
 }
 
@@ -2122,11 +2122,6 @@ canvas[width="250"][height="250"] {
 
 .main-trackInfo-release {
   font-size: 10px;
-}
-
-.encore-bright-accent-set {
-  --background-highlight: var(--spice-button) !important;
-  --background-press: var(--spice-button-active) !important;
 }
 
 .control-button--active::after {
