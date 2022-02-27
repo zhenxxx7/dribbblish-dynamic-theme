@@ -2124,6 +2124,11 @@ canvas[width="250"][height="250"] {
   font-size: 10px;
 }
 
+.encore-bright-accent-set {
+  --background-highlight: var(--spice-button) !important;
+  --background-press: var(--spice-button-active) !important;
+}
+
 .control-button--active::after {
   display: none;
 }
