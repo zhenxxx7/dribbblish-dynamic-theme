@@ -2127,6 +2127,7 @@ canvas[width="250"][height="250"] {
 .encore-bright-accent-set {
   --background-highlight: var(--spice-button) !important;
   --background-press: var(--spice-button-active) !important;
+  color: var(--spice-sidebar-text);
 }
 
 .control-button--active::after {
