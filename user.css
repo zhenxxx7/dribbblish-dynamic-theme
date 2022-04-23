@@ -1263,14 +1263,6 @@ html {
 html.sidebar-hide-text .main-rootlist-statusIcons {
   left: 0px;
 }
-.main-rootlist-statusIcons .main-playButton-button {
-  width: 32px;
-  height: 32px;
-  margin: 0px;
-  color: var(--spice-sidebar);
-  background-color: rgba(var(--spice-rgb-main), 0.7);
-  border-radius: var(--sidebar-icons-border-radius);
-}
 
 .main-rootlist-expandArrow {
   z-index: 2;
@@ -2134,11 +2126,22 @@ canvas[width="250"][height="250"] {
 }
 
 .encore-bright-accent-set {
-  --background-highlight: var(--spice-button) !important;
-  --background-press: var(--spice-button-active) !important;
+  --background-highlight: spiceColor("button") !important;
+  --background-press: spiceColor("button-active") !important;
   color: var(--spice-sidebar-text);
 }
 
 .control-button--active::after {
   display: none;
+}
+
+.encore-dark-theme .encore-inverted-light-set {
+  --background-highlight: spiceColor("button-active");
+  --text-base: spiceColor("sidebar-text");
+}
+
+.main-nowPlayingBar-left button[aria-checked=false],
+.main-nowPlayingBar-right button,
+.main-nowPlayingBar-center button {
+  color: rgba(var(--spice-rgb-subtext), 0.7);
 }
