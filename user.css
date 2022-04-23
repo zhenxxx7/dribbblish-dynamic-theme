@@ -2018,8 +2018,12 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
   z-index: 4;
 }
 
-.main-actionBar-ActionBarRow button:not(.main-playButton-primary) {
+.main-actionBar-ActionBarRow button:not(:hover) {
   color: var(--spice-subtext);
+}
+
+.main-actionBar-ActionBarRow button:hover div {
+  background-color: rgba(var(--spice-rgb-rgb-text), 0.7) !important;
 }
 
 /* explicit icon */
@@ -2140,8 +2144,17 @@ canvas[width="250"][height="250"] {
   --text-base: spiceColor("sidebar-text");
 }
 
+.main-nowPlayingBar-left button,
 .main-nowPlayingBar-left button[aria-checked=false],
 .main-nowPlayingBar-right button,
-.main-nowPlayingBar-center button {
-  color: rgba(var(--spice-rgb-subtext), 0.7);
+.main-nowPlayingBar-right button:focus:not(:focus-visible):not(:hover),
+.main-nowPlayingBar-center button,
+.main-nowPlayingBar-center button:focus:not(:focus-visible):not(:hover) {
+  color: var(--spice-subtext);
+}
+
+.main-nowPlayingBar-left button:active,
+.main-nowPlayingBar-right button:active,
+.main-nowPlayingBar-center button:active {
+  color: rgba(var(--spice-rgb-text), 0.7) !important;
 }
