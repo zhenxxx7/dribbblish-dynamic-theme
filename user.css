@@ -2023,7 +2023,7 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
 }
 
 .main-actionBar-ActionBarRow button:hover div {
-  background-color: rgba(var(--spice-rgb-rgb-text), 0.7) !important;
+  background-color: rgba(var(--spice-rgb-text), 0.7) !important;
 }
 
 /* explicit icon */
