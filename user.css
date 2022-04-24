@@ -2150,11 +2150,17 @@ canvas[width="250"][height="250"] {
 .main-nowPlayingBar-right button:focus:not(:focus-visible):not(:hover),
 .main-nowPlayingBar-center button,
 .main-nowPlayingBar-center button:focus:not(:focus-visible):not(:hover) {
-  color: var(--spice-subtext);
+  color: var(--spice-sidebar-text);
 }
 
 .main-nowPlayingBar-left button:active,
 .main-nowPlayingBar-right button:active,
 .main-nowPlayingBar-center button:active {
   color: rgba(var(--spice-rgb-text), 0.7) !important;
+}
+
+.main-heroCard-card,
+.main-heroCard-cardMetadata a,
+.main-heroCard-cardMetadata div {
+  color: var(--spice-sidebar-text) !important;
 }
