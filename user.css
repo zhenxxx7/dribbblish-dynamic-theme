@@ -2130,8 +2130,8 @@ canvas[width="250"][height="250"] {
 }
 
 .encore-bright-accent-set {
-  --background-highlight: spiceColor("button") !important;
-  --background-press: spiceColor("button-active") !important;
+  --background-highlight: var(--spice-button) !important;
+  --background-press: var(--spice-button-active) !important;
   color: var(--spice-sidebar-text);
 }
 
@@ -2140,8 +2140,8 @@ canvas[width="250"][height="250"] {
 }
 
 .encore-dark-theme .encore-inverted-light-set {
-  --background-highlight: spiceColor("button-active");
-  --text-base: spiceColor("sidebar-text");
+  --background-highlight: var(--spice-subtext);
+  --text-base: var(--spice-sidebar-text);
 }
 
 .main-nowPlayingBar-left button,
