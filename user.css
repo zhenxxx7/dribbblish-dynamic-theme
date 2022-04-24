@@ -2150,7 +2150,7 @@ canvas[width="250"][height="250"] {
 .main-nowPlayingBar-right button:focus:not(:focus-visible):not(:hover),
 .main-nowPlayingBar-center button,
 .main-nowPlayingBar-center button:focus:not(:focus-visible):not(:hover) {
-  color: var(--spice-sidebar-text);
+  color: var(--spice-subtext);
 }
 
 .main-nowPlayingBar-left button:active,
