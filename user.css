@@ -1955,7 +1955,7 @@ html.right-expanded-cover.buddyfeed-visible .main-coverSlotExpanded-container {
 
 /** Mini dribbblish */
 .x-categoryCard-CategoryCard > div {
-  background-color: var(--spice-main);
+  color: var(--spice-main);
   width: calc(100% - 14px);
   height: calc(100% - 6px);
   margin: 3px 10px;
@@ -2159,8 +2159,16 @@ canvas[width="250"][height="250"] {
   color: rgba(var(--spice-rgb-text), 0.7) !important;
 }
 
-.main-heroCard-card,
-.main-heroCard-cardMetadata a,
-.main-heroCard-cardMetadata div {
-  color: var(--spice-sidebar-text) !important;
+.main-heroCard-card span,
+.main-heroCard-cardMetadata .main-cardHeader-link,
+.main-heroCard-cardMetadata .main-cardSubHeader-root div {
+  color: var(--spice-sidebar-text);
+}
+
+#searchPage .main-heroCard-cardMetadata .main-cardHeader-link {
+  color: var(--spice-text);
+}
+
+#searchPage h3 {
+  color: var(--spice-main);
 }
